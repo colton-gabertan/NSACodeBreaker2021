@@ -9,7 +9,6 @@ You have been provided a capture of data en route to the listening post as well 
 * [traffic headed to listening post]
 * [ip ranges]
 
----
 ## Writeup
 
 This challenge is quite simple as we are given all the necessary information to start hunting for the machines that have communicated with the attacker's listening post. In order to determine the IP's that have done so, we need to take a look at the capture. I used my favorite network packet tool, WireShark. Now, the tricky part is that we aren't given specific IP's, but we are given the ranges.

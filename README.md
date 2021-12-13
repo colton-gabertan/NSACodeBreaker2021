@@ -1,4 +1,4 @@
-# Task01 - Network Forensics, Command Line
+# Task02 - Log Analysis
 
 **Task Instructions**:
 
@@ -8,9 +8,11 @@ OOPS is a cloud containerization provider that acts as a one-stop shop for hosti
 
 Identify the logon ID of the user session that communicated with the malicious LP (i.e.: on the machine that sent the beacon *and* active at the time the beacon was sent).
 
-[capture] \
-[ip ranges]
+
 
 ---
 ## Writeup
 
+[Subnet associated with OOPS]:
+[Network Proxy Logs from Bluecoat server]:
+[Login data from domain controller]:

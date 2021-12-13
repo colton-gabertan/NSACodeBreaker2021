@@ -17,7 +17,7 @@ This means that we need to know about subnetting a network. Given the form of th
 
 Upon opening the capture in wireshark, it can look overwhelming, as it displays all of the traffic in chronological order by default. However, to narrow it down, I decided to take a look at the endpoints.
 
-**Wireshark Endpoints**
+### Wireshark Endpoints:
 <img src="task01endpoints.gif" alt="Wireshark Endpoints">
 
 [capture]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task01/capture.pcap

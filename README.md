@@ -9,9 +9,12 @@ You have been provided a capture of data en route to the listening post as well 
 [capture] \
 [ip ranges]
 
-[capture]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task01/capture.pcap
-[ip ranges]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task01/ip_ranges.txt
-
 ---
 
-  This challenge is quite simple as we are given all the necessary information to start hunting for the machines that have communicated with the attacker's listening post. In order to determine the IP's that have done so, we need to take a look at the capture. I used my favorite network packet tool, WireShark.
+This challenge is quite simple as we are given all the necessary information to start hunting for the machines that have communicated with the attacker's listening post. In order to determine the IP's that have done so, we need to take a look at the capture. I used my favorite network packet tool, WireShark. Now, the trick part is that we aren't given specific IP's, but we are given the ranges.
+
+This means that we need to know about subnetting a network. Given the form of the range it looks a bit like **192.168.127.51/25**. This is known as CIDR notation, and it tells us which bits are reserved for the subnet and hosts, in turn telling us, which IP addresses actually exist in the subnet. For more information on how to actually calculate these ranges, I've written a separate article [here].
+
+[capture]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task01/capture.pcap
+[ip ranges]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task01/ip_ranges.txt
+[here]: https://gabertan-colton.medium.com/ipv4-subnetting-c2f70d772789

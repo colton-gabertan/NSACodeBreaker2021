@@ -27,6 +27,8 @@ Luckily, in observing the endpoints, all of the ranges were greater than or equa
 Thanks to the CIDR notation /24, this means that the first 24 bits will not change for those subnets, and we only need to look for those values from our given ranges. Since it wasn't a huge list of IP's, I did not find it necessary to write a parser to find my values and only needed to take note of which ones I found within the endpoints.
 
 ### Noted IP Ranges and found IP Addresses
+<img src="markedIPs.jpg" alt="Marked IP Ranges">
+<img src="foundIPs.jpg" alt="Found IP's">
 
 
 [capture]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task01/capture.pcap

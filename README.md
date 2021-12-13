@@ -24,7 +24,7 @@ I went out on a whim, given that we are looking at a lot of internet traffic, an
 A quick search of the shady URI in the proxy log yielded us a result.
 
 ### OOPS machine traffic on the proxy log
-<img src="https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task02/zdfou.jpg"
+<img src="https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task02/zdfou.jpg">
      
 If we take a closer look at the times, we can see that the pcap has a time of 12
 

@@ -65,6 +65,11 @@ $dec = $(for ($i = 0; $i -lt $bytes.length; $i++) {
 iex([System.Text.Encoding]::UTF8.GetString($dec))
 ```
 
+We've found a malicious powershell script that was hidden as *puppy.jpg*. The first line is what encodes the second portion, which is the actual script being ran from byrd.frank's machine. As we can see, it also confirms that some more stuff has been downloaded from the shady URI we found in task02. The pcap from task01 will prove to come in handy once again as we can view the downloaded data. 
+
+But first, a breakdown of this script:
+It starts by declaring a $bytes variable that will download the data. Then it stores it in $prev by deobfuscating the incoming bytes, looping through the data, -bxor'ing each byte. The iex stands for *invoke expression* in powershell, meaning it actually runs whatever the deobfuscated data is, which we can assume is more malware. 
+
 
 [User's Emails]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task03/emails.zip
 [CyberChef]: https://gchq.github.io/CyberChef/

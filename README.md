@@ -13,7 +13,7 @@ After examining the downloaded powershell script from the task03, it is clear th
 Public key data isn't too important as, by its name, is generally safe for anyone to have; however, private keys, which are used to decrypt data encrypted by public keys are a bit more sensite. So, lets take a look at those for now. The private keys are marked with the file extension .ppk.
 
 ### Viewing .ppk data
-<img src="https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task04/artifacts.zip">
+<img src="https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task04/ppk.gif">
 
 A quick glance reveals that there is no encryption for a couple of the private keys, meaning there's no password required to use them. Now that we know that there are unsafe private keys thrown in with these artifacts, all that's left is to see which sessions were active during the time of the breach, and which ones potentially got stolen. It is bad news if one of the unencrypted keys was in use while the malicious script ran.
 

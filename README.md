@@ -8,11 +8,13 @@ OOPS is a cloud containerization provider that acts as a one-stop shop for hosti
 
 Identify the logon ID of the user session that communicated with the malicious LP (i.e.: on the machine that sent the beacon *and* active at the time the beacon was sent).
 
+* [Subnet associated with OOPS]
+* [Network Proxy Logs from Bluecoat server]
+* [Login data from domain controller]
 
-
----
 ## Writeup
 
-[Subnet associated with OOPS]:
-[Network Proxy Logs from Bluecoat server]:
-[Login data from domain controller]:
+
+[Subnet associated with OOPS]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task02/oops_subnet.txt
+[Network Proxy Logs from Bluecoat server]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task02/proxy.log
+[Login data from domain controller]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task02/logins.json

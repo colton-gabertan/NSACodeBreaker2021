@@ -15,6 +15,8 @@ This challenge is quite simple as we are given all the necessary information to 
 
 This means that we need to know about subnetting a network. Given the form of the range it looks a bit like **192.168.127.51/25**. This is known as CIDR notation, and it tells us which bits are reserved for the subnet and hosts, in turn telling us, which IP addresses actually exist in the subnet. For more information on how to actually calculate these ranges, I've written a separate article [here].
 
+Upon opening the capture in wireshark, it can look overwhelming, as it displays all of the traffic in chronological order by default. However, to narrow it down, I decided to take a look at the endpoints.
+
 [capture]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task01/capture.pcap
 [ip ranges]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task01/ip_ranges.txt
 [here]: https://gabertan-colton.medium.com/ipv4-subnetting-c2f70d772789

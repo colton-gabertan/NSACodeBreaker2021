@@ -20,6 +20,13 @@ Upon opening the capture in wireshark, it can look overwhelming, as it displays 
 ### Wireshark Endpoints:
 <img src="task01endpoints.gif" alt="Wireshark Endpoints">
 
+Luckily, in observing the endpoints, all of the ranges were greater than or equal to /24. This means that the first three bytes of the IP ranges are reserved, and only the last byte of the IPv4 address would be different within the subnet. To go into more detail, an IP address is four contiguous bytes of 32 bit values. In binary, an IP address looks like: 
+
+**00000000.00000000.00000000.00000000**
+
+Thanks to the CIDR notation /24, this means that the first 24 bits will not change for those subnets, and we only need to look for those values from our given ranges. Since it wasn't a huge list of IP's, I did not find it necessary to write a parser to find my values and only needed to take note of which ones I found within the endpoints.
+
+
 [capture]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task01/capture.pcap
 [ip ranges]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task01/ip_ranges.txt
 [here]: https://gabertan-colton.medium.com/ipv4-subnetting-c2f70d772789

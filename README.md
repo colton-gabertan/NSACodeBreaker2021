@@ -20,7 +20,7 @@ Upon opening the capture in wireshark, it can look overwhelming, as it displays 
 ### Wireshark Endpoints:
 <img src="task01endpoints.gif" alt="Wireshark Endpoints">
 
-Luckily, in observing the endpoints, all of the ranges were greater than or equal to /24. This means that the first three bytes of the IP ranges are reserved, and only the last byte of the IPv4 address would be different within the subnet. To go into more detail, an IP address is four contiguous bytes of 32 bit values. In binary, an IP address looks like: 
+Luckily, in observing the endpoints, all of the ranges matching our given list are greater than or equal to /24. This means that the first three bytes of the IP ranges are reserved, and only the last byte of the IPv4 address would be different within the subnet. To go into more detail, an IP address is four contiguous bytes of 32 bit values. In binary, an IP address looks like: 
 
 **00000000.00000000.00000000.00000000**
 

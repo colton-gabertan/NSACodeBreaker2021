@@ -73,6 +73,9 @@ It starts by declaring a $bytes variable that will download the data. Then it st
 Referring to the pcap from task01, we can pull this data by finding the traffic associated with *http://zdfou.invalid/computer*.
 
 ### Pulling the data from the pcap
+<img src="https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task03/zdfouGet.gif">
+
+
 
 
 

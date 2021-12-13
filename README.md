@@ -1,9 +1,11 @@
-# NSA Codebreaker 2021
+# Task04 - Powershell, Registry Analysis
 
-* [task01]
-* [task02]
-* [task03]
+**Task Instructions**:
 
-[task01]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task01/README.md
-[task02]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task02/README.md
-[task03]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task03/README.md
+A number of OOPS employees fell victim to the same attack, and we need to figure out what's been compromised! Examine the malware more closely to understand what it's doing. Then, use these artifacts to determine which account on the OOPS network has been compromised.
+
+* [OOPS forensic artifacts]
+
+## Writeup
+
+[OOPS forensic artifacts]: 

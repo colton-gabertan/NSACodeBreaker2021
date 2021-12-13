@@ -29,7 +29,7 @@ Thanks to the CIDR notations being >= /24, this means that the first 24 bits wil
 ### Noted IP Ranges and found IP Addresses
 <img src="markedIPs.jpg" alt="Marked IP Ranges"> <img src="foundIPs.jpg" alt="Found IP's">
 
-With this information, we have successfully narrowed down which of the DIB companies have communicated with this threat actor's listening post, and we can move onto the next task.
+Notice how within the found IP addresses, only the last three digits are different from the marked ranges. With this information, we have successfully narrowed down which of the DIB companies have communicated with this threat actor's listening post, and we can move onto the next task.
 
 [traffic headed to listening post]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task01/capture.pcap
 [ip ranges]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task01/ip_ranges.txt

@@ -17,7 +17,35 @@ With email analysis, simply viewing the emails with a typical .eml viewer or bro
 ### To demonstrate
 <img src="https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task03/task03eml.gif">
 
-Going through each of these emails, one definitely stood out, and it was message_21. The others would be able to load and display the attached image/jpeg files; however this one wouldn't. Each email's attachments are also base64 encoded, which is pretty typical of email data, but it also leaves an attack vector to be exploited. Simply editing the eml header could hide a malicious script that can be base64 encoded as well. Trying to view this picture that won't load could potentially run a malicious script. 
+Going through each of these emails, one definitely stood out, and it was message_21. The others would be able to load and display the attached image/jpeg files; however this one wouldn't. Each email's attachments are also base64 encoded, which is pretty typical of email data, but it also leaves an attack vector to be exploited. Simply editing the eml header could hide a malicious script that can be base64 encoded as well. Trying to view this picture that won't load could potentially run a malicious script.
+
+### User View of message_21
+<img src="https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task03/email21.jpg">
+
+### Sublime Text View of message_21
+```
+--===============8244490006239525902==
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="puppy.jpg"
+MIME-Version: 1.0
+
+cG93ZXJzaGVsbCAtbm9wIC1ub25pIC13IEhpZGRlbiAtZW5jIEpBQmlBSGtBZEFCbEFITUFJQUE5
+QUNBQUtBQk9BR1VBZHdBdEFFOEFZZ0JxQUdVQVl3QjBBQ0FBVGdCbEFIUUFMZ0JYQUdVQVlnQkRB
+R3dBYVFCbEFHNEFkQUFwQUM0QVJBQnZBSGNBYmdCc0FHOEFZUUJrQUVRQVlRQjBBR0VBS0FBbkFH
+Z0FkQUIwQUhBQU9nQXZBQzhBZWdCa0FHWUFid0IxQUM0QWFRQnVBSFlBWVFCc0FHa0FaQUF2QUdN
+QWJ3QnRBSEFBZFFCMEFHVUFjZ0FuQUNrQUNnQUtBQ1FBY0FCeUFHVUFkZ0FnQUQwQUlBQmJBR0lB
+ZVFCMEFHVUFYUUFnQURVQU5nQUtBQW9BSkFCa0FHVUFZd0FnQUQwQUlBQWtBQ2dBWmdCdkFISUFJ
+QUFvQUNRQWFRQWdBRDBBSUFBd0FEc0FJQUFrQUdrQUlBQXRBR3dBZEFBZ0FDUUFZZ0I1QUhRQVpR
+QnpBQzRBYkFCbEFHNEFad0IwQUdnQU93QWdBQ1FBYVFBckFDc0FLUUFnQUhzQUNnQWdBQ0FBSUFB
+Z0FDUUFjQUJ5QUdVQWRnQWdBRDBBSUFBa0FHSUFlUUIwQUdVQWN3QmJBQ1FBYVFCZEFDQUFMUUJp
+QUhnQWJ3QnlBQ0FBSkFCd0FISUFaUUIyQUFvQUlBQWdBQ0FBSUFBa0FIQUFjZ0JsQUhZQUNnQjlB
+Q2tBQ2dBS0FHa0FaUUI0QUNnQVd3QlRBSGtBY3dCMEFHVUFiUUF1QUZRQVpRQjRBSFFBTGdCRkFH
+NEFZd0J2QUdRQWFRQnVBR2NBWFFBNkFEb0FWUUJVQUVZQU9BQXVBRWNBWlFCMEFGTUFkQUJ5QUdr
+QWJnQm5BQ2dBSkFCa0FHVUFZd0FwQUNrQUNnQT0=
+
+--===============8244490006239525902==--
+```
 
 
 [User's Emails]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task03/emails.zip

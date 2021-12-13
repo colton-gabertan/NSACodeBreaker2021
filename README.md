@@ -6,9 +6,8 @@ With the provided information, OOPS was quickly able to identify the employee as
 
 Identify the message ID of the malicious email and the targeted server.
 
-
-
+* [User's Emails]
 
 ## Writeup
 
-[User's Emails]: 
+[User's Emails]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task03/emails.zip

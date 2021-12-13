@@ -28,6 +28,11 @@ A quick search of the shady URI in the proxy log yielded us a result.
      
 If we take a closer look at the times, we can see that the pcap has a time of 12:14:53 and the proxy log has the time 8:14:53, meaning the time zones are different, based on the settings of wireshark we are using; however, this does confirm that we are looking at a viable timeframe to see when the beacon was sent as well as when the compromised machine was actively online. We can also see the proxied IP address of 10.175.90.229 that makes the request to the URI.
 
+Now with these new pieces of information, we are ready to dive into the login data from the proxy controller. First finding a match for the timeframe we are looking for. There are multiple approaches to find a match; however, taking into account the differences in time zones, I specifically looked for the 14:53 aspect and the date *2021-03-16*.
+
+### Login matching the timeframe
+
+
 
 
 [Subnet associated with OOPS]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task02/oops_subnet.txt

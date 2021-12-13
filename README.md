@@ -17,7 +17,7 @@ With email analysis, simply viewing the emails with a typical .eml viewer or bro
 ### To demonstrate
 <img src="https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task03/task03eml.gif">
 
-Going through each of these emails, one definitely stood out, and it was message_21. The others would be able to load the attached image/jpeg files; however this one wouldn't. Each email's attachments are also base64 encoded, which is pretty typical of email data, but it also leaves an attack vector to be exploited. Simply editing the eml header could hide a malicious script that can be base64 encoded as well. 
+Going through each of these emails, one definitely stood out, and it was message_21. The others would be able to load and display the attached image/jpeg files; however this one wouldn't. Each email's attachments are also base64 encoded, which is pretty typical of email data, but it also leaves an attack vector to be exploited. Simply editing the eml header could hide a malicious script that can be base64 encoded as well. Trying to view this picture that won't load could potentially run a malicious script. 
 
 
 [User's Emails]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task03/emails.zip

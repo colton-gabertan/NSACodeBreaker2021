@@ -9,8 +9,8 @@ You have been provided a capture of data en route to the listening post as well 
 [capture]
 [ip ranges]
 
-[capture]:(https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task01/capture.pcap)
-[ip ranges]:(https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task01/ip_ranges.txt)
+[capture]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task01/capture.pcap
+[ip ranges]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task01/ip_ranges.txt
 
 ---
 

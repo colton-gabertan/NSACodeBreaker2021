@@ -78,16 +78,16 @@ Referring to the pcap from task01, we can pull this data by finding the traffic 
 We can then modify the script to *not* invoke the expression, but instead spit out the deobfuscated data into a new .txt file. Simply provide the path to the downloaded data from pcap in the first line, and specify an outfile for the new text.
 
 ``` powershell
->> $bytes = (New-Object Net.WebClient).DownloadData('C:\Users\Colton\Desktop\nsaCodebreaker\task01\zdfouGet.bin')
->>
->> $prev = [byte] 56
->>
->> $dec = $(for ($i = 0; $i -lt $bytes.length; $i++) {
->>     $prev = $bytes[$i] -bxor $prev
->>     $prev
->> })
->>
->> ([System.Text.Encoding]::UTF8.GetString($dec)) | Out-File C:\Users\Colton\Desktop\nsaCodebreaker\task03\zdfou.txt
+$bytes = (New-Object Net.WebClient).DownloadData('C:\Users\Colton\Desktop\nsaCodebreaker\task01\zdfouGet.bin')
+
+$prev = [byte] 56
+
+$dec = $(for ($i = 0; $i -lt $bytes.length; $i++) {
+    $prev = $bytes[$i] -bxor $prev
+    $prev
+})
+
+([System.Text.Encoding]::UTF8.GetString($dec)) | Out-File C:\Users\Colton\Desktop\nsaCodebreaker\task03\zdfou.txt
 ```
 
 

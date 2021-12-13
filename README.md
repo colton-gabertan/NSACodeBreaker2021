@@ -16,7 +16,7 @@ Identify the logon ID of the user session that communicated with the malicious L
 
 To start off, the subnet associated with OOPS is a bit misleading. The logs we are looking at are proxied through the bluecoat server, meaning the given IP range won't really help us, as the traffic is run through the proxy and not the machine itself. Therefore, the approach we would need to take is to try to match up the times of the machines that were active while the beacon was sent. However, the subnet does help us narrow down our search for the needle in the haystack if we refer back to the pcap capture from task 1.
 
-I went out on a whim, given that we are looking at a lot of internet traffic, and decided to look at the http information of the pcap. Sure enough, we can see some communication between a shady URI and a machine on OOPS's subnet.
+I went out on a whim, given that we are looking at a lot of internet traffic, and decided to look at the http information of the pcap. Sure enough, we can see some communication between a shady URI *http://zdfou.infalid* and a machine on OOPS's subnet.
 
 ### OOPS Traffic
 <img src="https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task02/subnetTraffic.jpg">

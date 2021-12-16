@@ -24,6 +24,12 @@ $PuTTYPathEnding = "\SOFTWARE\SimonTatham\PuTTY\Sessions"
 $WinSCPPathEnding = "\SOFTWARE\Martin Prikryl\WinSCP 2\Sessions"
 ```
 
+In WRR I popped in the provided NTUSER.DAT and immediately visited the paths that the script did. Sure enough we can find a few of those unprotected keys in use. After a bit of cross-checking to ensure that the private key of the session was unencrypted, the machine dkr_prd53 had its key stolen, and its Hostname is landerbot.
+
+### NTUSER.DAT via WRR
+![image](https://user-images.githubusercontent.com/66766340/146339431-54c971ad-f623-41b4-9fac-4098aa00a5ac.png)
+
+With this information, an incident response team can now start to investigate the compromised machine. In the next task, we will be looking for some interesting indications of compromise.
 
 [OOPS forensic artifacts]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task04/artifacts.zip
 [WRR]: https://www.mitec.cz/wrr.html

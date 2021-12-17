@@ -18,7 +18,7 @@ Analyze the provided Docker image and identify the actor's techniques.
 
 *This challenge was easing us into some malware analysis, setting us up nicely to start reverse engineering a binary. I wrote an article [here] as a very gentle introduction into this topic if you've never done or seen anything of this nature*
 
-As we are provided with nothing but the image.tar, before loading it into Docker, I wanted to take a look at the strings of the folder before anything else. I was working on wsl, using the build-in strings command, then I stored the output to image.txt and dove in.
+As we are provided with nothing but the image.tar, before loading it into Docker, I wanted to take a look at the strings of the folder before anything else. I was working on wsl, using the built-in strings command, then I stored the output to image.txt and dove in.
 
 ### Command to extract the strings
 ```
@@ -42,7 +42,7 @@ In reference to the commands found after the github repo was cloned, I noticed s
 ### Unusual Make Command
 ![image](https://user-images.githubusercontent.com/66766340/146482533-498dfaca-7d10-41e8-b573-3512deb0936d.png)
 
-After being tipped off by the unusual make commands, I decided to look for it in the filesystem and found it lurking in /usr/bin/make.
+After being tipped off by the unusual make commands, I decided to look for it in the filesystem and found it lurking in [/usr/bin/make].
 
 ![image](https://user-images.githubusercontent.com/66766340/146482842-f4b2a99b-ac1f-451c-a1ff-29739c199c82.png)
 
@@ -55,3 +55,4 @@ Sure enough, after a bit of basic static analysis, we've found a full-fledged pr
 [here]: https://gabertan-colton.medium.com/practical-malware-analysis-basic-static-techniques-8897bd21b9e6
 [article]: https://makefiletutorial.com/
 [Ghidra]: https://ghidra-sre.org/
+[/usr/bin/make]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task05/make

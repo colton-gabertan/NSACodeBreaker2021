@@ -16,6 +16,8 @@ Analyze the provided Docker image and identify the actor's techniques.
 
 ## Writeup
 
+*This challenge was easing us into some malware analysis, setting us up nicely to start reverse engineering a binary. I wrote an article [here] as a very gentle introduction into this topic if you've never done or seen anything of this nature*
+
 As we are provided with nothing but the image.tar, before loading it into Docker, I wanted to take a look at the strings of the folder before anything else. I was working on wsl, using the build-in strings command, then I stored the output to image.txt and dove in.
 
 ### Command to extract the strings
@@ -48,7 +50,8 @@ Given the nature of makefiles, I had never seen one quite that large and decided
 
 ![image](https://user-images.githubusercontent.com/66766340/146483267-accba269-7ff3-47c5-8da6-6732a5829c8f.png)
 
-Sure enough, we've found a full-fledged program that does nothing what an actual make binary should be doing. Locating and disassembling this malware sets us up nicely to start reverse engineering it and getting to the bottom of what it does for the next task. 
+Sure enough, after a bit of basic static analysis, we've found a full-fledged program that does nothing what an actual make binary should be doing. Locating and disassembling this malware sets us up nicely to start reverse engineering it and getting to the bottom of what it does for the next task. 
 
+[here]: https://gabertan-colton.medium.com/practical-malware-analysis-basic-static-techniques-8897bd21b9e6
 [article]: https://makefiletutorial.com/
 [Ghidra]: https://ghidra-sre.org/

@@ -42,7 +42,13 @@ In reference to the commands found after the github repo was cloned, I noticed s
 
 After being tipped off by the unusual make commands, I decided to look for it in the filesystem and found it lurking in /usr/bin/make.
 
+![image](https://user-images.githubusercontent.com/66766340/146482842-f4b2a99b-ac1f-451c-a1ff-29739c199c82.png)
 
+Given the nature of makefiles, I had never seen one quite that large and decided to take a closer look. My suspicion lead me to go straight to disassembling the binary, in true NSA fashion, I did so by popping it into Ghidra. 
 
+![image](https://user-images.githubusercontent.com/66766340/146483267-accba269-7ff3-47c5-8da6-6732a5829c8f.png)
+
+Sure enough, we've found a full-fledged program that does nothing what an actual make binary should be doing. Locating and disassembling this malware sets us up nicely to start reverse engineering it and getting to the bottom of what it does for the next task. 
 
 [article]: https://makefiletutorial.com/
+[Ghidra]: https://ghidra-sre.org/

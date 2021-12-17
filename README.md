@@ -1,4 +1,4 @@
-# NSA Codebreaker 2021 ![image](https://user-images.githubusercontent.com/66766340/146485713-6ecbe673-6bd7-45dd-88a8-48d52499d284.png)
+# NSA Codebreaker 2021 
 
 * [task01]
 * [task02]

@@ -29,7 +29,6 @@ Furthermore, I personally like to use the terminal user interface built into gdb
 ```
 gdb make
 set disassembly-flavor intel
-tui enable
 layout asm
 layout reg
 ```

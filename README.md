@@ -31,6 +31,8 @@ In WRR I popped in the provided NTUSER.DAT and immediately visited the paths tha
 
 With this information, an incident response team can now start to investigate the compromised machine. In the next task, we will be looking for some interesting indications of compromise.
 
+![image](https://user-images.githubusercontent.com/66766340/148634551-c6edd37d-781c-4d3e-ac99-9f012e73ac29.png)
+
 [OOPS forensic artifacts]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task04/artifacts.zip
 [WRR]: https://www.mitec.cz/wrr.html
 [script]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task03/zdfou.sh

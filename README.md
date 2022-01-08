@@ -24,7 +24,7 @@ $PuTTYPathEnding = "\SOFTWARE\SimonTatham\PuTTY\Sessions"
 $WinSCPPathEnding = "\SOFTWARE\Martin Prikryl\WinSCP 2\Sessions"
 ```
 
-In WRR I popped in the provided NTUSER.DAT and immediately visited the paths that the script did. Sure enough we can find a few of those unprotected keys in use. After a bit of cross-checking to ensure that the private key of the session was unencrypted, the machine dkr_prd53 had its key stolen, and its Hostname is landerbot.
+In WRR I popped in the provided NTUSER.DAT and immediately visited the paths that the script did. Sure enough we can find a few of those unprotected keys in use. After a bit of cross-checking to ensure that the private key of the session was unencrypted, the machine `dkr_prd53` had its key stolen, and its Hostname is `landerbot`.
 
 ### NTUSER.DAT via WRR
 ![image](https://user-images.githubusercontent.com/66766340/146339431-54c971ad-f623-41b4-9fac-4098aa00a5ac.png)

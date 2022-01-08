@@ -31,6 +31,8 @@ Thanks to the CIDR notations being >= /24, this means that the first 24 bits wil
 
 Notice how within the found IP addresses, only the last three digits are different from the marked ranges. With this information, we have successfully narrowed down which of the DIB companies have communicated with this threat actor's listening post, and we can move onto the next task.
 
+![image](https://user-images.githubusercontent.com/66766340/148634497-99bb94ac-4a74-4b10-a152-3206292d8576.png)
+
 [traffic headed to listening post]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task01/capture.pcap
 [ip ranges]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task01/ip_ranges.txt
 [here]: https://gabertan-colton.medium.com/ipv4-subnetting-c2f70d772789

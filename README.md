@@ -16,7 +16,7 @@ Analyze the provided Docker image and identify the actor's techniques.
 
 ## Writeup
 
-*This challenge was easing us into some malware analysis, setting us up nicely to start reverse engineering a binary. I wrote an article [here] as a very gentle introduction into this topic if you've never done or seen anything of this nature*
+> This challenge was easing us into some malware analysis, setting us up nicely to start reverse engineering a binary. I wrote an article [here] as a very gentle introduction  into this topic if you've never done or seen anything of this nature
 
 As we are provided with nothing but the image.tar, before loading it into Docker, I wanted to take a look at the strings of the folder before anything else. I was working on wsl, using the built-in strings command, then I stored the output to image.txt and dove in.
 

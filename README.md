@@ -38,7 +38,9 @@ After eyeballing the json for a little while, I was able to find a logins from t
 ### byrd.frank's login ID
 <img src="https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task02/loginID.jpg">
 
-In conclusion, we have been able to narrow the incident down to which employee engaged with the malicious URI, as well as the machine on OOPS's network that had been compromised. With this, we can move onto the next task, investigating the identified malicious traffic and the actions of the employee. 
+In conclusion, we have been able to narrow the incident down to which employee engaged with the malicious URI, as well as the machine on OOPS's network that had been compromised. With this, we can move onto the next task, investigating the identified malicious traffic and the actions of the employee.
+
+![image](https://user-images.githubusercontent.com/66766340/148634519-2cf2b354-4c9f-4a2f-a82c-b05bda4382d8.png)
 
 [Subnet associated with OOPS]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task02/oops_subnet.txt
 [Network Proxy Logs from Bluecoat server]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task02/proxy.log

@@ -25,7 +25,7 @@ apk add gdb
 
 From here, we just need to navigate to the malicious `make` in `/usr/bin` and start debugging. Simultaneously, I had my other copy of `make` open in Ghidra, so I could follow along with the execution of code.
 
-Furthermore, I personally like to use the terminal user interface built into gdb as it can display the assembly, registers, and breakpoints as we step through the malware. I also like to view the assembly in intel syntax, as I'm more familiar with it. We can do so like so:
+Furthermore, I personally like to use the terminal user interface built into gdb as it can display the assembly, registers, and breakpoints as we step through the malware. I also like to view the assembly in intel syntax, as I'm more familiar with it. We can do this like so:
 ```
 gdb make
 set disassembly-flavor intel
@@ -35,3 +35,5 @@ layout reg
 
 ### GDB Setup
 <img src="https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task06/task06-1.gif">
+
+

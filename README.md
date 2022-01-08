@@ -50,7 +50,9 @@ Given the nature of makefiles, I had never seen one quite that large and decided
 
 ![image](https://user-images.githubusercontent.com/66766340/146483267-accba269-7ff3-47c5-8da6-6732a5829c8f.png)
 
-Sure enough, after a bit of basic static analysis, we've found a full-fledged program that does nothing what an actual make binary should be doing. Locating and disassembling this malware sets us up nicely to start reverse engineering it and getting to the bottom of what it does for the next task. 
+Sure enough, after a bit of basic static analysis, we've found a full-fledged program that does nothing what an actual make binary should be doing. Locating and disassembling this malware sets us up nicely to start reverse engineering it and getting to the bottom of what it does for the next task.
+
+![image](https://user-images.githubusercontent.com/66766340/148634567-5c8aa635-1120-4f13-be30-bb42051ae8e9.png)
 
 [here]: https://gabertan-colton.medium.com/practical-malware-analysis-basic-static-techniques-8897bd21b9e6
 [article]: https://makefiletutorial.com/

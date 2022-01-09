@@ -36,4 +36,10 @@ layout reg
 #### GDB Setup
 <img src="https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task06/task06-1.gif">
 
+---
+
+### Reversing
+
+Luckily, this binary wasn't stripped of debug symbols, allowing us to successfully degug it without too many hiccups. There is even a well-defined main, which is a good starting point to start exploring this program. Some of the subroutines are either mangled or have their names obfuscated, but that isn't much of a problem as we begin to walk through the execution of code and observe the disassembly as well as the decompilation.
+
 

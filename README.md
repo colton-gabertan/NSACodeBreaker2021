@@ -25,7 +25,7 @@ As we are provided with nothing but the image.tar, before loading it into Docker
 strings image.tar > image.txt
 ```
 
-It returns an overwhelming amount of strings; however, we have some information from the flags we're looking for to help narrow the search. There is a repo that is cloned onto the container and the command to do so is: git clone. I searched for that in the text file and found and found a scripit that clones the repo, along with some of the commands run afterwards.
+It returns an overwhelming amount of strings; however, we have some information from the flags we're looking for to help narrow the search. There is a repo that is cloned onto the container and the command to do so is: git clone. I searched for that in the text file and found a script that clones the repo, along with some of the commands run afterwards.
 
 ### Info found from image.txt
 ![image](https://user-images.githubusercontent.com/66766340/146481906-ee273079-7d06-4e77-beb8-6c1961c7aa63.png)

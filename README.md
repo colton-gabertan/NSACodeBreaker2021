@@ -33,7 +33,7 @@ layout asm
 layout reg
 ```
 
-### GDB Setup
+#### GDB Setup
 <img src="https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task06/task06-1.gif">
 
 

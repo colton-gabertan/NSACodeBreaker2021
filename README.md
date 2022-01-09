@@ -19,14 +19,16 @@ Good luck. We hope you enjoy the challenge!
 
 # Writeups
 
-* [task01]
-* [task02]
-* [task03]
-* [task04]
-* [task05]
+* [task01] - Network Forensics, Command Line
+* [task02] - Log Analysis
+* [task03] - Email Analysis
+* [task04] - Powershell, Registry Analysis
+* [task05] - Docker Analysis
+* [task06] - Reverse Engineering
 
 [task01]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task01/README.md
 [task02]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task02/README.md
 [task03]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task03/README.md
 [task04]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task04/README.md
 [task05]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task05/README.md
+[task06]: https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task06/README.md

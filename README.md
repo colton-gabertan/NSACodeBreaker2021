@@ -64,4 +64,11 @@ Off the bat, we can see a variable that potentially holds the IP of the LP, call
 ### `ip` Getting Defined
 ![image](https://user-images.githubusercontent.com/66766340/149034139-7b5191df-98ba-4533-8c74-ed0fd904b07e.png)
 
-Checking out the decompilation of the `wcasbyllnvkwe()` function, we can see that its parameter is called `stringId`. It utilizes a switch-case statement to return a char* (string) based on the `stringId`, and there is even a case defined for the value of 0x13. From here, we can ensure that it is a safe bet that calling this function with 0x13 will show us whatever string gets stored in `ip` for `gitGrabber()` to use. Optionally, you can rename functions in Ghidra with `L`. 
+Checking out the decompilation of the `wcasbyllnvkwe()` function, we can see that its parameter is called `stringId`. It utilizes a switch-case statement to return a char* (string) based on the `stringId`, and there is even a case defined for the value of 0x13. From here, we can ensure that it is a safe bet that calling this function with 0x13 will show us whatever string gets stored in `ip` for `gitGrabber()` to use. Optionally, you can rename functions in Ghidra with `L`. I would use something like `getString`, but I opted out in renaming functions for this task.
+
+### Decompilation for Case 0x13 - Potential IP
+![image](https://user-images.githubusercontent.com/66766340/149035178-12263cd6-2864-4fec-b2e6-ea6a989aae7a.png)
+
+Popping back into the debugger, we can run this function, passing it 0x13 as a parameter to see what gets stored in the `ip` variable.
+
+

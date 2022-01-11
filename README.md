@@ -65,7 +65,7 @@ Off the bat, we can see a variable that potentially holds the IP of the LP, call
 ![image](https://user-images.githubusercontent.com/66766340/149034139-7b5191df-98ba-4533-8c74-ed0fd904b07e.png)
 
 Checking out the decompilation of the `wcasbyllnvkwe()` function, we can see that its parameter is called `stringId`. It utilizes a switch-case statement to return a char* (string) based on the `stringId`, and there is even a case defined for the value of 0x13. From here, we can ensure that it is a safe bet that calling this function with 0x13 will show us whatever string gets stored in `ip` for `gitGrabber()` to use.
-> Optionally, you can rename functions in Ghidra with `L`. I would use something like `getString`, but I opted out in renaming functions for this task.
+> Optionally, you can rename functions in Ghidra with `L`. I used `getString`.
 
 ### Decompilation for Case 0x13 - Potential IP
 ![image](https://user-images.githubusercontent.com/66766340/149035178-12263cd6-2864-4fec-b2e6-ea6a989aae7a.png)
@@ -75,6 +75,13 @@ Popping back into the debugger, we can run this function, passing it 0x13 as a p
 ### Calling `wcasbyllnvkwei(0x13)`
 <img src="https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task06/task06-2.gif">
 
-Awesome, we get a valid IP address: `192.51.100.53`. As a sanity check, I decided to also pop open WireShark and check out this malware's network traffic.
+Awesome, we get a valid IP address: `192.51.100.53`. As a sanity check, I decided to also pop open WireShark and check out this malware's network traffic. However, running this binary in the docker container would fail to produce any traffic. This may be due to some cleanup performed, or the fact that the ip's and urls in the challenge are anonymized/ disabled. From this point, I dove into what happens after `ip` is defined.
+
+Back in `gitGrabber()`, after defining `ip` with `192.51.100.53`, we can see a call to `emxyeurbzbyih()`. It takes a few parameters, namely: `ip`, `port`, `output`, and `length`. It's doing all sorts of things, especially calling the `getString()` function we observed earlier to define more variables to use. One more host-based signature we can see that it defines is the `version_00` which is defined by `getString(0x11)`. We will investigate that for the task later.
+
+However, there is another subroutine call to `isbrtadsiixgv()`, taking the `ip` and `port` as parameters.
+
+
+
 
 

@@ -48,9 +48,9 @@ layout reg
 #### GDB Setup
 <img src="https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task06/task06-1.gif">
 
----
+## Reversing
 
-### Reversing
+### Finding the IP of the LP
 
 Luckily, this binary wasn't stripped of debug symbols, allowing us to successfully debug it without too many hiccups. There is even a well-defined `main()`, which is a good starting point to explore this program. Some of the subroutines are either mangled or have their names obfuscated, but that isn't much of a problem as we begin to walk through the execution of code and observe the disassembly as well as the decompilation.
 
@@ -79,7 +79,9 @@ Awesome, we get a valid IP address: `192.51.100.53`. As a sanity check, I decide
 
 Back in `gitGrabber()`, after defining `ip` with `192.51.100.53`, we can see a call to `emxyeurbzbyih()`. It takes a few parameters, namely: `ip`, `port`, `output`, and `length`. It's doing all sorts of things, especially calling the `getString()` function we observed earlier to define more variables to use. One more host-based signature we can see that it defines is the `version_00` which is defined by `getString(0x11)`. We will investigate that for the task later.
 
-However, there is another subroutine call to `isbrtadsiixgv()`, taking the `ip` and `port` as parameters. At this point, I wanted to run the program up until this point, to take a clearer look at the values defined. This will take some manipulation of the binaries as there are many checks to correctly run it without fail.
+However, there is another subroutine call to `isbrtadsiixgv()`, taking the `ip` and `port` as parameters. At this point, I wanted to run the program up until this point, to take a clearer look at the values defined. This will take some manipulation of the binary as there are many checks to correctly run it without fail.
+
+
 
 
 

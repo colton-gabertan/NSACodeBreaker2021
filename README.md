@@ -54,12 +54,12 @@ layout reg
 
 Luckily, this binary wasn't stripped of debug symbols, allowing us to successfully debug it without too many hiccups. There is even a well-defined `main()`, which is a good starting point to explore this program. Some of the subroutines are either mangled or have their names obfuscated, but that isn't much of a problem as we begin to walk through the execution of code and observe the disassembly as well as the decompilation.
 
-If we run `start` in the debugger, it will take us to the entry-point of the program, a call to a subroutine named `gitGrabber`. Before proceeding, let's take a look at this function in Ghidra.
+If we run `start` in the debugger, it will take us to the entry-point of the program, a call to a subroutine named `gitGrabber()`. Before proceeding, let's take a look at this function in Ghidra.
 
 ### Starting Point
 ![image](https://user-images.githubusercontent.com/66766340/149032922-4809c818-cd10-4f40-8675-a98dd6e9a54d.png)
 
-Off the bat, we can see a variable that potentially holds the IP of the LP, called `ip`. Upon checking its XREFs (Cross-references), it gets initialized with 0x0 and defined after a call to `wcasbyllnvkwe()`. This function also took 0x13 as a parameter. We can infer that the return value of the function gets stored into `ip`, because return values typically get stored in `RAX`. And, then we can see a `MOV` of whatever gets stored into `RAX` to `ip`.
+Off the bat, we can see a variable that potentially holds the IP of the LP, called `c++ ip`. Upon checking its XREFs (Cross-references), it gets initialized with 0x0 and defined after a call to `wcasbyllnvkwe()`. This function also took 0x13 as a parameter. We can infer that the return value of the function gets stored into `ip`, because return values typically get stored in `RAX`. And, then we can see a `MOV` of whatever gets stored into `RAX` to `ip`.
 
 ### `ip` Getting Defined
 ![image](https://user-images.githubusercontent.com/66766340/149034139-7b5191df-98ba-4533-8c74-ed0fd904b07e.png)

@@ -86,10 +86,17 @@ However, there is another subroutine call to `isbrtadsiixgv()`, taking the `ip` 
 
 ### Exploiting the `make` Binary
 
-At this point we need to `stepi`nto `gitGrabber()` and navigate our way to `emxyeurbzbyih()` and take a look at `isbrtadsiixgv()`. Scrolling through the disassembly of `gitGrabber()` we can see a couple of roadblocks we need to bypass. It starts by initializing its local variables with some empty values, but then we reach a `cmp` and `je`. We don't want it to jump over to a different part of the function yet, so we need to modify the values that are being compared to keep it running the way we want.
+At this point we need to `stepi`nto `gitGrabber()` and navigate our way to `emxyeurbzbyih()` and take a look at `isbrtadsiixgv()`. Scrolling through the disassembly of `gitGrabber()` we can see a couple of roadblocks we need to bypass. It starts by initializing its local variables with some empty values, but then we reach a `cmp` and `je`. We don't want it to jump over to a different part of the function yet, so we may or may not need to modify the values that are being compared to keep it running the way we want.
 
 ### First Control Flow to Bypass
 ![image](https://user-images.githubusercontent.com/66766340/149039129-e0c0bcb4-5043-4d02-85ad-51f16599597d.png)
+
+We can set a breakpoint to the part right before the `cmp`, where it stores whatever is in `eax` to the local variable. From there, we can observe the register to see if it will trigger the redirect in the flow of execution. Essentially, we will check if the value in `eax` at that point is equal to `0xfffffff`
+> After setting the breakpoint, I ran `c` to continue to it, and used `x $eax` to take a look at the stored value. We can also take a look at it above the disassembly if you set up the debugger with the tui the way described above.
+
+### Setting Breakpoint, Continuing, Observing `eax` Register
+![image](https://user-images.githubusercontent.com/66766340/149039780-3fafe0cf-0e7b-45b7-b049-bd402ccc8b30.png)
+![image](https://user-images.githubusercontent.com/66766340/149039980-0fc39b6c-f81e-4620-8a02-475ff3f3b0c4.png)
 
 
 

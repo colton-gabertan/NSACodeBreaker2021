@@ -59,4 +59,8 @@ If we run `start` in the debugger, it will take us to the entry-point of the pro
 ### Starting Point
 ![image](https://user-images.githubusercontent.com/66766340/149032922-4809c818-cd10-4f40-8675-a98dd6e9a54d.png)
 
+Off the bat, we can see a variable that potentially holds the IP of the LP, called `ip`. Upon checking its XREFs (Cross-references), it gets initialized with 0x0 and defined after a call to `wcasbyllnvkwe`. This function also took 0x13 as a parameter. We can infer that the return value of the function gets stored into `ip`, because return values typically get stored in `RAX`. And, then we can see a `MOV` of whatever gets stored into `RAX` to `ip`.
+
+### `ip` Getting Defined
+![image](https://user-images.githubusercontent.com/66766340/149034139-7b5191df-98ba-4533-8c74-ed0fd904b07e.png)
 

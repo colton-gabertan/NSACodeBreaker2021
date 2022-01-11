@@ -81,6 +81,18 @@ Back in `gitGrabber()`, after defining `ip` with `192.51.100.53`, we can see a c
 
 However, there is another subroutine call to `isbrtadsiixgv()`, taking the `ip` and `port` as parameters. At this point, I wanted to run the program up until this point, to take a clearer look at the values defined. This will take some manipulation of the binary as there are many checks to correctly run it without fail.
 
+### gitGrabber() -> emxyeurbzbyih(ip, port, output, length) -> isbrtadsiixgv()
+![image](https://user-images.githubusercontent.com/66766340/149038412-78311c51-b833-44a6-bdd7-832449ad1342.png)
+
+### Exploiting the `make` Binary
+
+At this point we need to `stepi`nto `gitGrabber()` and navigate our way to `emxyeurbzbyih()` and take a look at `isbrtadsiixgv()`. Scrolling through the disassembly of `gitGrabber()` we can see a couple of roadblocks we need to bypass. It starts by initializing its local variables with some empty values, but then we reach a `cmp` and `je`. We don't want it to jump over to a different part of the function yet, so we need to modify the values that are being compared to keep it running the way we want.
+
+### First Control Flow to Bypass
+![image](https://user-images.githubusercontent.com/66766340/149039129-e0c0bcb4-5043-4d02-85ad-51f16599597d.png)
+
+
+
 
 
 

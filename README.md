@@ -4,6 +4,18 @@
 
 Now that we've found a malicious artifact, the next step is to understand what it's doing. Identify some characteristics of the communications between the malicious artifact and the LP.
 
+> Enter the IP of the LP that the malicious artifact sends data to
+> ```
+> ```
+> 
+> Enter the public key of the LP (hex encoded)
+> ```
+> ```
+> 
+> Enter the version number reported by the malware
+> ```
+> ```
+
 ## Writeup
 
 For this task, I feel that I took the quick and dirty approach, combining a bit of static and dynamic analysis to extract the necessary information needed to complete it. I did all of the analysis both on my windows machine as well as a docker containter built by the provided image from the last task.

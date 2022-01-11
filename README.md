@@ -72,4 +72,9 @@ Checking out the decompilation of the `wcasbyllnvkwe()` function, we can see tha
 
 Popping back into the debugger, we can run this function, passing it 0x13 as a parameter to see what gets stored in the `ip` variable.
 
+### Calling `wcasbyllnvkwei(0x13)`
+<img src="https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task06/task06-2.gif">
+
+Awesome, we get a valid IP address: `192.51.100.53`. As a sanity check, I decided to also pop open WireShark and check out this malware's network traffic.
+
 

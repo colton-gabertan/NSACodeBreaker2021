@@ -42,4 +42,9 @@ layout reg
 
 Luckily, this binary wasn't stripped of debug symbols, allowing us to successfully debug it without too many hiccups. There is even a well-defined `main()`, which is a good starting point to explore this program. Some of the subroutines are either mangled or have their names obfuscated, but that isn't much of a problem as we begin to walk through the execution of code and observe the disassembly as well as the decompilation.
 
+If we run `start` in the debugger, it will take us to the entry-point of the program, a call to a subroutine named `gitGrabber`. Before proceeding, let's take a look at this function in `Ghidra`.
+
+### Starting Point
+![image](https://user-images.githubusercontent.com/66766340/149032922-4809c818-cd10-4f40-8675-a98dd6e9a54d.png)
+
 

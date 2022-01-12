@@ -156,7 +156,27 @@ I renamed the `isbrtadsiixgv()` function to `establishConnection()` and took a l
 ### Avoiding Connection to Attacker's Server
 ![image](https://user-images.githubusercontent.com/66766340/149045308-e13944e0-6645-428e-bb42-94813ff7bd73.png)
 
-Now that we successfully avoided establishing a connection, we can make our way to the `orhtyltfkkwhg()` function that contains the public key variables.
+Now that we successfully avoided establishing a connection, we can make our way to the `orhtyltfkkwhg()` function that contains the public key variables. Upon returning from `establishConnection()` we are met with one more control flow that we want to actually jump into to get to `orhtyltfkkwhg()`. We are essentially trying to make the program think that we successfully established a connection with the server. It checks based on the return value from the last function.
+
+This time, it checks to see if the value in the local variable is negative. We can fuzz this variable with a non-negative number to ensure that we jump into the code block that we want. After jumping to where we want to be, we can now hop our way into `orhtyltfkkwhg()`
+
+### Manipulating Control Flow
+![image](https://user-images.githubusercontent.com/66766340/149047168-c4ddcec1-33cd-47c7-a171-413780dfb60b.png)
+
+Upon stepping into `orhtyltfkkwhg()`, the thing we are interested in is trying to see the size of the public key. This will correspond with how much memory is allocated for the public key variables we were able to observe in Ghidra. In order to do so, I set a breakpoint at the part where `pubKey` gets initialized via the `getString(0x12)` function.
+
+From there we can run the command `info locals` and see that `client_public` has 32 bytes allocated for the public key, and `pubKey` has some random bytes stored in it.
+
+### Memory Allocated for Public Key
+![image](https://user-images.githubusercontent.com/66766340/149047798-90587d86-3766-4973-ad67-6dfaaf1d2559.png)
+
+All that's left from here is to hex-encode the public key obtained from calling `getString(0x12)` 
+> An important thing to note is that because of endianess, these bits may actually be stored backwards. So, to get the proper format after calling the function, we need to set it from little to big via `set endian big`
+
+### Hex-Encoded 32-bit Public Key
+
+
+
 
 
 

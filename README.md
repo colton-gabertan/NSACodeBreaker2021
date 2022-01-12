@@ -8,6 +8,14 @@ Identify the message ID of the malicious email and the targeted server.
 
 * [User's Emails]
 
+> Enter the message ID of the malicious email (format: <111111111111.22222.33333333333333333333@aaa.bbb>)
+> ```
+> ```
+> 
+> Enter the domain name of the server that the malicious payload sends a POST request to
+> ```
+> ```
+
 ## Writeup
 
 > In a realistic environment, I would advise to never blatantly open the emails on a baremetal workstation. Instead, this is the point where we should spin up a virtual machine  tailored for malware analysis. This will protect us from accidentally running or downloading some malware. However, given that this is a CTF you *should* be fine to do so and observe the behavior of the emails. 
@@ -66,6 +74,12 @@ iex([System.Text.Encoding]::UTF8.GetString($dec))
 ```
 
 We've found a malicious powershell script that was hidden as `puppy.jpg`. The first line is what encodes the second portion, which is the actual script being ran from byrd.frank's machine. As we can see, it also confirms that some more stuff has been downloaded from the shady URI we found in task02. The pcap from task01 will prove to come in handy once again as we can rip the downloaded data. 
+
+Now that we've identified a potentially malicious email, we can take note of the message Id via the header:
+
+```
+<161588869700.22130.6236834096533730863@oops.net>
+```
 
 But first, a breakdown of this script: \
 It starts by declaring a `$bytes` variable that will download the data. Then it stores it in `$prev` and once more in `$dec` by deobfuscating the incoming bytes, looping through the `$prev` array, `-bxor`'ing each byte. The `iex` stands for *invoke expression* in powershell, meaning it actually runs whatever the deobfuscated data is, which we can assume is more malware. Luckily, this a very poor implementation of crypto, and we can use the script to decode this data and read it.

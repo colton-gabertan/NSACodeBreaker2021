@@ -79,9 +79,12 @@ Awesome, we get a valid IP address: `192.51.100.53`. As a sanity check, I decide
 
 Back in `gitGrabber()`, after defining `ip` with `192.51.100.53`, we can see a call to `emxyeurbzbyih()`. It takes a few parameters, namely: `ip`, `port`, `output`, and `length`. It's doing all sorts of things, especially calling the `getString()` function we observed earlier to define more variables to use. One more host-based signature we can see that it defines is the `version_00` which is defined by `getString(0x11)`. We will investigate that for the task later.
 
+### emxyeurbzbyih() Parameters
+![image](https://user-images.githubusercontent.com/66766340/149101663-83e919e0-37b6-4e3e-9f46-047a4b5addad.png)
+
 However, there is another subroutine call to `isbrtadsiixgv()`, taking the `ip` and `port` as parameters. At this point, I wanted to run the program up until we could `stepi`nto `isbrtadsiixgv()`, to take a clearer look at the values defined. This will take some manipulation of the binary as there are many checks to correctly run it without fail.
 
-### gitGrabber() -> emxyeurbzbyih(ip, port, output, length) -> isbrtadsiixgv()
+### isbrtadsiixgv() Parameters
 ![image](https://user-images.githubusercontent.com/66766340/149038412-78311c51-b833-44a6-bdd7-832449ad1342.png)
 
 ### Exploiting the `make` Binary
@@ -179,6 +182,7 @@ All that's left from here is to hex-encode the public key obtained from calling 
 ```
 c025488f15bca089c38d45cf3688e9bfbc0dc762bb681ba3d9f936e30f0e8b40
 ```
+> The command `x/32x` allows us to `x`-amine the return value, `$1` in a 32-bit, hex-encoded format
 
 --- 
 

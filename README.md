@@ -6,6 +6,14 @@ A number of OOPS employees fell victim to the same attack, and we need to figure
 
 * [OOPS forensic artifacts]
 
+> Enter the name of the machine the attackers can now access
+> ```
+> ```
+> 
+> Enter the username the attackers can use to access that machine
+> ```
+> ```
+
 ## Writeup
 
 After examining the downloaded powershell script from task03, it is clear that it scrapes SCP and SSH session keys. This is most likely so that the attacker can escalate further into OOPS's network and compromise more machines. Based on the artifacts provided, we have public keys, private keys, and a snapshot of the machine's registry. The first thing we would do is take a look at the artifacts and draw some conclusions based on the state of them.

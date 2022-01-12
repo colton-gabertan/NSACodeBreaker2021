@@ -82,7 +82,7 @@ Now that we've identified a potentially malicious email, we can take note of the
 ```
 
 But first, a breakdown of this script: \
-It starts by declaring a `$bytes` variable that will download the data. Then it stores it in `$prev` and once more in `$dec` by deobfuscating the incoming bytes, looping through the `$prev` array, `-bxor`'ing each byte. The `iex` stands for *invoke expression* in powershell, meaning it actually runs whatever the deobfuscated data is, which we can assume is more malware. Luckily, this a very poor implementation of crypto, and we can use the script to decode this data and read it.
+It starts by declaring a `$bytes` variable that will download the data. Then it in `$dec` by deobfuscating the incoming bytes, `-bxor`ing them by the `prev` variable. The `iex` stands for *invoke expression* in powershell, meaning it actually runs whatever the deobfuscated data is, which we can assume is more malware. Luckily, this a very poor implementation of crypto, and we can use the script to decode this data and read it.
 
 Referring to the pcap from task01, we can pull this data by finding the traffic associated with *http://zdfou.invalid/computer*.
 

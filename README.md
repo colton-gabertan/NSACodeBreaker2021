@@ -195,3 +195,4 @@ As noted earlier, we spotted an interesting local variable in `emxyeurbzbyih()` 
 
 After a bit of reverse engineering, we have successfully pulled the IP address of the attacker's LP, a good network-based signature, a public key that it uses to encrypt its message, and a specific version number, which is a good host-based signature. From here, another security team may be able to infiltrate the attacker's infrastructure to prevent attacks, mitigate damage done, and even build a threat intelligence profile.
 
+![image](https://user-images.githubusercontent.com/66766340/149050421-39a20528-197e-4803-9081-ca223a1c3db2.png)

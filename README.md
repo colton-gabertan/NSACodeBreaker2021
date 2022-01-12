@@ -142,6 +142,22 @@ Nice, we now have an ip and port confirmed. This particular instance of malware 
 
 With this I was comfortable enough to use `192.51.100.53` as my answer for the IP of the LP portion. At this point we can start hunting for the hex encoded public key.
 
+### Finding the Public Key
+
+Before debugging any further, I decided to check out more subroutines to see if the public key gets defined anywhere. Luckily, it's a cleanly-written program for malware, and the author was kind enough to not obfuscate variable names. Back in the `ggComms()` function, there is a call to `orhtyltfkkwhg()`, with some interesting local variables, `pubKey`, `public_key`, and `client_public`. 
+
+We can even see that `pubKey` gets defined by our `getString()`, passing 0x12 as the `stringId`. Now the only piece of crucial information before checking out `getString(0x12)` is the length of the key. This prompted me to start debugging again in order to observe how much space was allocated for it.
+
+### Public Key Variables
+![image](https://user-images.githubusercontent.com/66766340/149045518-4684eafa-eb95-48b9-a7fd-7949622f46b5.png)
+
+I renamed the `isbrtadsiixgv()` function to `establishConnection()` and took a look at it in Ghidra before continuing. We can see that there are a couple of control flows to bypass in order to avoid accidentally communicating with the attacker's server. This first one makes a `cmp` with a local variable and 0x0 to check if the sign flag is set (checking if the value is negative) via `js`. So we need to fuzz the value with a negative number, because we do not want this portion to run.
+
+### Avoiding Connection to Attacker's Server
+![image](https://user-images.githubusercontent.com/66766340/149045308-e13944e0-6645-428e-bb42-94813ff7bd73.png)
+
+Now that we successfully avoided establishing a connection, we can make our way to the `orhtyltfkkwhg()` function that contains the public key variables.
+
 
 
 

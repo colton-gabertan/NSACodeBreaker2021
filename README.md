@@ -185,8 +185,11 @@ c025488f15bca089c38d45cf3688e9bfbc0dc762bb681ba3d9f936e30f0e8b40
 
 As noted earlier, we spotted an interesting local variable in `emxyeurbzbyih()` called `version_00` that gets initialized with `getString(0x11)`. Let's hop into gdb and see if we can pull a version from the returned string.
 
+### Version Number
+<img src="https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task06/task06-4.gif">
+```
+1.1.4.1-QVT
+```
 
-
-
-
+After a bit of reverse engineering, we have successfully pulled the IP address of the attacker's LP, a good network-based signature, a public key that it uses to encrypt its message, and a specific version number, which is a good host-based signature. From here, another security team may be able to infiltrate the attacker's infrastructure to prevent attacks, mitigate damage done, and even build a threat intelligence profile.
 

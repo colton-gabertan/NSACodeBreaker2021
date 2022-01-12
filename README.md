@@ -175,6 +175,7 @@ All that's left from here is to hex-encode the public key obtained from calling 
 
 ### Hex-Encoded 32-bit Public Key
 <img src="https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task06/task06-3.gif">
+
 ```
 c025488f15bca089c38d45cf3688e9bfbc0dc762bb681ba3d9f936e30f0e8b40
 ```
@@ -187,6 +188,7 @@ As noted earlier, we spotted an interesting local variable in `emxyeurbzbyih()` 
 
 ### Version Number
 <img src="https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task06/task06-4.gif">
+
 ```
 1.1.4.1-QVT
 ```

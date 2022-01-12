@@ -89,7 +89,7 @@ Referring to the pcap from task01, we can pull this data by finding the traffic 
 ### Pulling the data from the pcap
 <img src="https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task03/zdfouGet.gif">
 
-We can then modify the script to *not* invoke the expression, but instead spit out the deobfuscated data into a new .txt file. Simply provide the path to the downloaded data from pcap in the first line, and specify an outfile for the new text.
+We can then modify the script to *not* invoke the expression, but instead spit out the deobfuscated data into a new .txt file. Simply provide the path to the downloaded data from the pcap in the first line, and specify an outfile for the new text.
 
 ``` powershell
 $bytes = (New-Object Net.WebClient).DownloadData('C:\Users\Colton\Desktop\nsaCodebreaker\task01\zdfouGet.bin')

@@ -188,7 +188,7 @@ c025488f15bca089c38d45cf3688e9bfbc0dc762bb681ba3d9f936e30f0e8b40
 
 ### Finding the Version Number
 
-As noted earlier, we spotted an interesting local variable in `emxyeurbzbyih()` called `version_00` that gets initialized with `getString(0x11)`. Let's hop into gdb and see if we can pull a version from the returned string.
+As noted earlier, we spotted an interesting local variable in `ggComms` called `version_00` that gets initialized with `getString(0x11)`. Let's hop into gdb and see if we can pull a version from the returned string.
 
 ### Version Number
 <img src="https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task06/task06-4.gif">

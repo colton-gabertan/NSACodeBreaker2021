@@ -98,7 +98,14 @@ We can set a breakpoint to the part right before the `cmp`, where it stores what
 ![image](https://user-images.githubusercontent.com/66766340/149039780-3fafe0cf-0e7b-45b7-b049-bd402ccc8b30.png)
 ![image](https://user-images.githubusercontent.com/66766340/149039980-0fc39b6c-f81e-4620-8a02-475ff3f3b0c4.png)
 
+From here, it looks like it will jump, which is what we don't want yet. We can change the value in `eax` with `set $eax = 0x0`. In order to bypass this control flow. In essence, we changed the value that gets stored into the variable that gets compared to 0xffffff, which in turn changed the execution of the program. We are now a bit closer to where we want to get.
 
+We can do this like so:
+```
+set $eax = 0x0
+ni
+```
+> hitting the `return` key after a command will re-run it. I used it for the `ni` (next instruction) command to check if we successfully bypassed.
 
 
 

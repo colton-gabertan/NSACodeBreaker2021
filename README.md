@@ -142,6 +142,8 @@ Nice, we now have an ip and port confirmed. This particular instance of malware 
 
 With this I was comfortable enough to use `192.51.100.53` as my answer for the IP of the LP portion. At this point we can start hunting for the hex encoded public key.
 
+---
+
 ### Finding the Public Key
 
 Before debugging any further, I decided to check out more subroutines to see if the public key gets defined anywhere. Luckily, it's a cleanly-written program for malware, and the author was kind enough to not obfuscate variable names. Back in the `ggComms()` function, there is a call to `orhtyltfkkwhg()`, with some interesting local variables, `pubKey`, `public_key`, and `client_public`. 
@@ -174,6 +176,10 @@ All that's left from here is to hex-encode the public key obtained from calling 
 > An important thing to note is that because of endianess, these bits may actually be stored backwards. So, to get the proper format after calling the function, we need to set it from little to big via `set endian big`
 
 ### Hex-Encoded 32-bit Public Key
+<img src="https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task06/task06-3.gif">
+```
+c025488f15bca089c38d45cf3688e9bfbc0dc762bb681ba3d9f936e30f0e8b40
+```
 
 
 

@@ -100,7 +100,7 @@ We can set a breakpoint to the part right before the `cmp`, where it stores what
 ![image](https://user-images.githubusercontent.com/66766340/149039780-3fafe0cf-0e7b-45b7-b049-bd402ccc8b30.png)
 ![image](https://user-images.githubusercontent.com/66766340/149039980-0fc39b6c-f81e-4620-8a02-475ff3f3b0c4.png)
 
-From here, it looks like it will jump, which is what we don't want yet. We can change the value in `eax` with `set $eax = 0x0`. In order to bypass this control flow. In essence, we changed the value that gets stored into the variable that gets compared to 0xffffff, which in turn changed the execution of the program. We are now a bit closer to where we want to get.
+From here, it looks like it will jump, which is what we don't want yet. We can change the value in `eax` with `set $eax = 0x0`, in order to bypass this control flow. In essence, we changed the value that gets stored into the variable that gets compared to 0xffffff, which in turn changed the execution of the program. We are now a bit closer to where we want to get.
 
 We can do this like so:
 ```
@@ -108,6 +108,39 @@ set $eax = 0x0
 ni
 ```
 > hitting the `return` key after a command will re-run it. I used it for the `ni` (next instruction) command to check if we successfully bypassed.
+
+### Successful Bypass
+![image](https://user-images.githubusercontent.com/66766340/149040532-0735cea2-60f0-4233-925f-2d1dd2d08f53.png)
+
+It looks like we successfully changed the execution; however, there is another `cmp` to bypass. This time, it tests `al` with itself and then jumps if they're not equal via `jne`. Using the same method, we need to ensure that `al` is equal to itself before continuing to push further into `gitGrabber()`.
+
+### Second Control Flow Bypass
+![image](https://user-images.githubusercontent.com/66766340/149040829-76b8389e-a9cb-44f1-961e-e2f65068a068.png)
+![image](https://user-images.githubusercontent.com/66766340/149040852-e4db097d-3fda-4bcd-9fa8-1201b46e6a26.png)
+
+A few instructions after, there is a third and final control flow to bypass. We can do it by deploying the same method as the previous two. This time it stores whatever is in `eax` into a local variable and jumps to a different section if it is not equal to 0x0 via `jne`.
+
+### Third Control Flow Bypass
+![image](https://user-images.githubusercontent.com/66766340/149041152-f1b3b273-14ec-44f7-bc0e-2f4e2f06e978.png)
+
+After this point, we can observe the part where `ip` gets initialized by the call, `getString(0x13)` then the call to the next function we want to `stepi`nto. All we need to do is set another breakpoint where `emxyeurbzbyih()`, continue onto it and step into the subroutine.
+
+### Stepping into `emxyeurbzbyih()`
+![image](https://user-images.githubusercontent.com/66766340/149041498-64474ae6-fc30-4eec-ab7a-12130d06c6c8.png)
+
+Interestingly enough, it looks like it's called `ggComms`. We can hop back into Ghidra and rename this function for clarity purposes moving forward. Now, what we need to do is see if we can make our way to the networking-type function, `isbrtadsiixgv()`.
+
+Taking a look at the decompilation of `ggComms`, there is a lot of initialization of local variables, but it doesn't seem to have anything we would need to bypass. So, a simple breakpoint and continue will do.
+
+### Passed Arguments to isbrtadsiixgv()
+![image](https://user-images.githubusercontent.com/66766340/149042169-119fe9d2-90f3-4bd0-8a41-ce9f235400fe.png)
+
+Nice, we now have an ip and port confirmed. This particular instance of malware decides to communicate over `198.51.100.53:6666`. Typically, different malware versions can change these values in order to evade detections, but I went out on a whim and tried to see if I can find any traffic assocaited with either of these values from the pcap provided from task01. Luckily enough, we can catch a ton of traffic over the unusual port of 6666 on the day that the alleged attack occured.
+
+### WireShark Sanity Check
+![image](https://user-images.githubusercontent.com/66766340/149042905-0815c904-598c-41c5-958f-dff0054221df.png)
+
+With this I was comfortable enough to use `192.51.100.53` as my answer for the IP of the LP portion. At this point we can start hunting for the hex encoded public key.
 
 
 

@@ -14,6 +14,18 @@ Analyze the provided Docker image and identify the actor's techniques.
 
 *I would've provided the file, but the image.tar was too large as it contains entire filesystems*
 
+> Enter the email of the PANIC employee who maintains the image
+> ```
+> ```
+> 
+> Enter the URL of the repository cloned when this image runs
+> ```
+> ```
+> 
+> Enter the full path to the malicious file present in the image
+> ```
+> ```
+
 ## Writeup
 
 > This challenge was easing us into some malware analysis, setting us up nicely to start reverse engineering a binary. I wrote an article [here] as a very gentle introduction  into this topic if you've never done or seen anything of this nature

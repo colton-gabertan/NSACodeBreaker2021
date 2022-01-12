@@ -49,7 +49,7 @@ Scrolling up just a bit, I was also able to find who maintains this image, along
 
 At this point, all that was left was to look for the malicious binary somewhere within the filesystem. .tar is an extention that indicates compression, similar to a .zip, so in order to take a peek at the filesystem before loading it into Docker, we can simply unzip the image.tar and dive into the files.
 
-In reference to the commands found after the github repo was cloned, I noticed something off with a few of them. Specifically the make command. From my experience coding with c++, makefiles are typically used to help with the compilation process of larger programs that have multiple dependencies. It allows us to compile one large program with the use of only one command, packaging it neatly together. For more information on makefiles and `make`, I recommend reading this [article].
+In reference to the commands found after the github repo was cloned, I noticed something off with a few of them. Specifically the `make` command. From my experience coding with c++, makefiles are typically used to help with the compilation process of larger programs that have multiple dependencies. It allows us to compile one large program with the use of only one command, packaging it neatly together. For more information on makefiles and `make`, I recommend reading this [article].
 
 ### Unusual Make Command
 ![image](https://user-images.githubusercontent.com/66766340/146482533-498dfaca-7d10-41e8-b573-3512deb0936d.png)

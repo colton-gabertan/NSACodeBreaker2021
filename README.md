@@ -34,7 +34,7 @@ If we take a closer look at the times, we can see that the pcap has a time of 12
 
 Now with these new pieces of information, we are ready to dive into the login data from the proxy controller. First, finding a match for the timeframe we are looking for. There are multiple approaches to find a match; however, taking into account the differences in time zones, I specifically looked for the 14:53 aspect and the date *2021-03-16*. Also, to help further narrow it down, I searched for the proxied IP: 10.175.90.229.
 
-After eyeballing the json for a little while, I was able to find a logins from two users, byrd.frank and patrick.tracy. However, only one of them looked like it would match the timeframe necessary, and it was byrd.frank. Within the same line this employee's login ID can also be found.
+After eyeballing the json for a little while, I was able to find logins from two users, byrd.frank and patrick.tracy. However, only one of them looked like it would match the timeframe necessary, and it was byrd.frank. Within the same line this employee's login ID can also be found.
 
 ### Login matching the timeframe
 <img src="https://github.com/colton-gabertan/NSACodeBreaker2021/blob/task02/loginTime.jpg">

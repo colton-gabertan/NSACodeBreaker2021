@@ -173,7 +173,7 @@ From there we can run the command `info locals` and see that `client_public` has
 ### Memory Allocated for Public Key (Dynamic)
 ![image](https://user-images.githubusercontent.com/66766340/149047798-90587d86-3766-4973-ad67-6dfaaf1d2559.png)
 
-To confirm this statically, we can take a look at the disassembly and see that `pubKey` is a `qword ptr`, meaning there is 32-bits allocated for that variable. In this code snippet, we can also see the call to `getString()` that defines it.
+To confirm this statically, we can take a look at the disassembly and see that `pubKey` is a `qword ptr`, meaning there are 32-bits allocated for that variable. In this code snippet, we can also see the call to `getString()` that defines it.
 
 ### Memory Allocated for Public Key (Static)
 ![image](https://user-images.githubusercontent.com/66766340/150388398-c80ac4d0-9cd1-4e7c-8487-fd1f7e6098f8.png)
